@@ -1,0 +1,4 @@
+Film Ekleme Penceresinde;
+-Arşiv sürükleme işlemi ile sadece resmi kabul ediyor. Buton ile yapılan arşiv resmini almıyor
+-Film Ekle işleminde resim eklerken image'nin önüne  "\" Çıkar
+-FilmAnasayfa Film Eklendikten sonra güncellenmesini sağla.

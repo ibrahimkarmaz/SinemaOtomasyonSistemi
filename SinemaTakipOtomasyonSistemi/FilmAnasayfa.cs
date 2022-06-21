@@ -33,7 +33,7 @@ namespace SinemaTakipOtomasyonSistemi
             AddUnboundColumn(GViewTabloGoster); 
             AssignPictureEdittoImageColumn(GViewTabloGoster.Columns["Image"]);
         }
-        private void TabloGetir()
+        public void TabloGetir()
         {
             this.Text = "FİLM LİSTESİ";
             GControlDatabase.DataSource = SqlKutuphanem.SQLKodDataGridViewReturn("select * from TblFilmler", SqlKutuphanem.BaglantiAc()).Tables[0];
@@ -56,6 +56,7 @@ namespace SinemaTakipOtomasyonSistemi
         {
             FilmEkle YeniFilm = new FilmEkle();
             YeniFilm.ShowDialog();
+            TabloGetir();//Tabloyu Güncelleme amaçlı 
         }
 
         private void GControlFilm_Paint(object sender, PaintEventArgs e)

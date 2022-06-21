@@ -79,7 +79,6 @@ namespace SinemaTakipOtomasyonSistemi
             if (AfisSec.ShowDialog() == DialogResult.OK)
             {
                 PEAfis.Image = Image.FromFile(AfisSec.FileName);
-                Console.WriteLine(PEAfis.GetLoadedImageLocation());
             }
         }
         string AfisYeniAdres, AfisYeniAdresApplicationStart;
@@ -97,7 +96,7 @@ namespace SinemaTakipOtomasyonSistemi
                             {
                                 if (MeFilmKonu.Text != "")
                                 {
-                                    if (PEAfis.GetLoadedImageLocation() != "" || Surukle.FileLocation != "")
+                                    if (AfisSec.FileName != "" || Surukle.FileLocation != "")
                                     {
                                         FilmParametreVeVerileri();
                                         try
@@ -179,8 +178,8 @@ namespace SinemaTakipOtomasyonSistemi
             {
                 AlanVeri.Add(0);
             }
-            AfisYeniAdresApplicationStart= @"\image\imageAfis\" + Guid.NewGuid() + ".jpg";
-            AfisYeniAdres = Application.StartupPath + AfisYeniAdresApplicationStart;
+            AfisYeniAdresApplicationStart= @"image\imageAfis\" + Guid.NewGuid() + ".jpg";
+            AfisYeniAdres = Application.StartupPath +"\\"+ AfisYeniAdresApplicationStart;
             if (PEAfis.GetLoadedImageLocation() == "")
             {
                 File.Copy(AfisSec.FileName, AfisYeniAdres);

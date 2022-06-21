@@ -2,3 +2,6 @@ FilmAnasayafa;
 -Getiren Tablo view üzerinden getir.
 -Afiş resim uzantısını göstermeden sadece afişi göster.
 -Düzenleme ve Çıkarma işlemlerini yap.
+
+
+*Veritabanından gelen adresi resme çeviren kodları class sınıfına dahil et.

@@ -30,7 +30,7 @@ namespace SinemaTakipOtomasyonSistemi
         private void InitializeComponent()
         {
             this.SBtnYeniKayit = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.SBtnDuzenle = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.GControlFilm = new DevExpress.XtraEditors.GroupControl();
             this.GControlDatabase = new DevExpress.XtraGrid.GridControl();
@@ -53,16 +53,17 @@ namespace SinemaTakipOtomasyonSistemi
             this.SBtnYeniKayit.Text = "Yeni";
             this.SBtnYeniKayit.Click += new System.EventHandler(this.SBtnYeniKayit_Click);
             // 
-            // simpleButton2
+            // SBtnDuzenle
             // 
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.ImageOptions.Image = global::SinemaTakipOtomasyonSistemi.Properties.Resources.pencolor_32x32;
-            this.simpleButton2.Location = new System.Drawing.Point(128, 31);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(110, 40);
-            this.simpleButton2.TabIndex = 1;
-            this.simpleButton2.Text = "Düzenle";
+            this.SBtnDuzenle.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.SBtnDuzenle.Appearance.Options.UseFont = true;
+            this.SBtnDuzenle.ImageOptions.Image = global::SinemaTakipOtomasyonSistemi.Properties.Resources.pencolor_32x32;
+            this.SBtnDuzenle.Location = new System.Drawing.Point(128, 31);
+            this.SBtnDuzenle.Name = "SBtnDuzenle";
+            this.SBtnDuzenle.Size = new System.Drawing.Size(110, 40);
+            this.SBtnDuzenle.TabIndex = 1;
+            this.SBtnDuzenle.Text = "Düzenle";
+            this.SBtnDuzenle.Click += new System.EventHandler(this.SBtnDuzenle_Click);
             // 
             // simpleButton3
             // 
@@ -79,14 +80,13 @@ namespace SinemaTakipOtomasyonSistemi
             // 
             this.GControlFilm.Controls.Add(this.simpleButton3);
             this.GControlFilm.Controls.Add(this.SBtnYeniKayit);
-            this.GControlFilm.Controls.Add(this.simpleButton2);
+            this.GControlFilm.Controls.Add(this.SBtnDuzenle);
             this.GControlFilm.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.GControlFilm.Location = new System.Drawing.Point(0, 428);
             this.GControlFilm.Name = "GControlFilm";
             this.GControlFilm.Size = new System.Drawing.Size(919, 79);
             this.GControlFilm.TabIndex = 5;
             this.GControlFilm.Text = "Film İşlemleri";
-            this.GControlFilm.Paint += new System.Windows.Forms.PaintEventHandler(this.GControlFilm_Paint);
             // 
             // GControlDatabase
             // 
@@ -129,7 +129,7 @@ namespace SinemaTakipOtomasyonSistemi
         #endregion
         private DevExpress.XtraEditors.SimpleButton SBtnYeniKayit;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton SBtnDuzenle;
         private DevExpress.XtraEditors.GroupControl GControlFilm;
         private DevExpress.XtraGrid.GridControl GControlDatabase;
         private DevExpress.XtraGrid.Views.Grid.GridView GViewTabloGoster;

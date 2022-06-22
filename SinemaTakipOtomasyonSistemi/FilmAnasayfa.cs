@@ -26,6 +26,7 @@ namespace SinemaTakipOtomasyonSistemi
             InitializeComponent();
         }
         SqlProcess SqlKutuphanem = new SqlProcess();
+        public static bool DuzenlemeYağ = false;
         private void FilmAnasayfa_Load(object sender, EventArgs e)
         {
             TabloGetir();
@@ -36,11 +37,11 @@ namespace SinemaTakipOtomasyonSistemi
         public void TabloGetir()
         {
             this.Text = "FİLM LİSTESİ";
-            GControlDatabase.DataSource = SqlKutuphanem.SQLKodDataGridViewReturn("select * from TblFilmler", SqlKutuphanem.BaglantiAc()).Tables[0];
+            GControlDatabase.DataSource = SqlKutuphanem.SQLKodDataGridViewReturn("select * from VWTblFilmAktif", SqlKutuphanem.BaglantiAc()).Tables[0];
         }
         private void TabloDuzen()
-        {//OptionsBehavior: Seçenekler Davranış(TR)
-            /*GViewTabloGoster.OptionsBehavior.Editable = false;//VERİTABANINDAN ÇEKİLEN TABLO ÜZERİNDE HERHANGİ BİR DEĞİŞİKLİK YAPILMASINI ENGELLİYOR.
+        {   //OptionsBehavior: Seçenekler Davranış(TR)
+            GViewTabloGoster.OptionsBehavior.Editable = false;//VERİTABANINDAN ÇEKİLEN TABLO ÜZERİNDE HERHANGİ BİR DEĞİŞİKLİK YAPILMASINI ENGELLİYOR.
             GViewTabloGoster.Columns["FilmAd"].Caption = "FİLM ADI";
             GViewTabloGoster.Columns["FilmYonetmen"].Caption = "FİLM YÖNETMENİ";
             GViewTabloGoster.Columns["TurAd"].Caption = "FİLM TÜRÜ";
@@ -48,8 +49,8 @@ namespace SinemaTakipOtomasyonSistemi
             GViewTabloGoster.Columns["FilmYerli"].Caption = "FİLM MENŞEİ";
             GViewTabloGoster.Columns["FilmKonu"].Caption = "FİLM KONUSU";
             GViewTabloGoster.Columns["FilmYil"].Caption = "FİLM YILI";
-            GViewTabloGoster.Columns["D3"].Caption = "3D";*/
-
+            GViewTabloGoster.Columns["D3"].Caption = "3D DESTEKLİYOR MU ?";
+            GViewTabloGoster.Columns["FilmAfisResim"].Visible = false;//FOTOĞRAF ADRESLERİNİ GİZLEME
         }
 
         private void SBtnYeniKayit_Click(object sender, EventArgs e)
@@ -59,10 +60,6 @@ namespace SinemaTakipOtomasyonSistemi
             TabloGetir();//Tabloyu Güncelleme amaçlı 
         }
 
-        private void GControlFilm_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
         void AddUnboundColumn(GridView view)
         {
             // Create an unbound column.
@@ -109,6 +106,11 @@ namespace SinemaTakipOtomasyonSistemi
                 }
                 e.Value = imageCache[fileName];
             }
+        }
+
+        private void SBtnDuzenle_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
